@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Navbar, Form, Button } from "react-bootstrap";
+import {} from "../App.css"
 
 class Regist extends Component {
   join = () => {
@@ -43,8 +44,27 @@ class Regist extends Component {
       return;
     }
 
-    // 여기에 실제 가입 처리 코드를 구현하세요
   };
+  
+  state = {
+    buttonDisplay: "True"
+  };
+
+
+  render() {
+    const buttonStyle = {
+      margin: "0px 5px 0px 10px",
+      display: this.state.buttonDisplay
+    };
+
+  return (
+    <div>
+      <Navbar>
+      <Navbar.Brand href="/"><div style={{width: '100%', textAlign: 'center', color: '#0066FF', fontSize: 40, fontFamily: 'Inter', fontWeight: '800', lineHeight: 2, wordWrap: 'break-word'}}>WON</div></Navbar.Brand>
+      </Navbar>
+    </div>
+  );
+  }
 
   render() {
     const formStyle = {
@@ -59,8 +79,8 @@ class Regist extends Component {
         <div style={{ width: "100%", textAlign: "center", color: "black", fontSize: 32, fontFamily: "Inter", fontWeight: 900, lineHeight: 2, wordWrap: "break-word" }}>가입정보 입력</div>
         <br />
         <div style={{ width: "100%", textAlign: "left", color: "black", fontSize: 16, fontFamily: "Roboto", fontWeight: 530, lineHeight: 3, wordWrap: "break-word" }}>회원정보를 입력해주세요.</div>
-        <Form.Group controlId="joinForm">
-          <div style={{ display: "flex", justifyContent: "center" }}>
+        <Form.Group controlId="joinForm" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div>
             <Form.Control
               type="text"
               maxLength="20"
@@ -70,7 +90,7 @@ class Regist extends Component {
             />
           </div>
           <br />
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div>
             <Form.Control
               type="text"
               maxLength="12"
@@ -80,7 +100,7 @@ class Regist extends Component {
             />
           </div>
           <br />
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div>
             <Form.Control
               type="password"
               maxLength="16"
@@ -90,7 +110,7 @@ class Regist extends Component {
             />
           </div>
           <br />
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div>
             <Form.Control
               type="password"
               maxLength="16"
@@ -100,7 +120,7 @@ class Regist extends Component {
             />
           </div>
           <br />
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div>
             <Form.Control
               type="text"
               maxLength="12"
